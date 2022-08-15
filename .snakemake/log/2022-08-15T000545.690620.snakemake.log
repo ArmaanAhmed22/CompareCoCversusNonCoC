@@ -1,0 +1,36 @@
+The flag 'directory' used in rule compare is only valid for outputs, not inputs.
+The flag 'directory' used in rule generate_diff is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count    min threads    max threads
+-------------  -------  -------------  -------------
+generate_diff        1              1              1
+total                1              1              1
+
+Select jobs to execute...
+
+[Mon Aug 15 00:05:45 2022]
+rule generate_diff:
+    input: Input/SEER18-2021/kmf_univariate_models
+    output: Output/SEER18-2021/diffs
+    jobid: 0
+    reason: Missing output files: Output/SEER18-2021/diffs
+    wildcards: file=SEER18-2021
+    resources: tmpdir=/tmp
+
+[Mon Aug 15 00:05:46 2022]
+Error in rule generate_diff:
+    jobid: 0
+    output: Output/SEER18-2021/diffs
+
+RuleException:
+CalledProcessErrorin line 24 of /home/aa/Desktop/CompareCoCversusNonCoC/Snakefile:
+Command 'set -euo pipefail;  /home/aa/.pyenv/versions/3.10.6/bin/python3.10 /home/aa/Desktop/CompareCoCversusNonCoC/.snakemake/scripts/tmpt86h1i87.generate_diff.py' returned non-zero exit status 1.
+  File "/home/aa/Desktop/CompareCoCversusNonCoC/Snakefile", line 24, in __rule_generate_diff
+  File "/home/aa/.pyenv/versions/3.10.6/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2022-08-15T000545.690620.snakemake.log
