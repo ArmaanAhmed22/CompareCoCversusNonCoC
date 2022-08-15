@@ -22,3 +22,11 @@ rule generate_diff:
         directory("Output/{file}/diffs")
     script:
         "Pipeline/generate_diff.py"
+
+rule division_diff:
+    input:
+        directory("Input/{file}/kmf_univariate_models")
+    output:
+        "Output/{file}/division_diff.png"
+    script:
+        "Pipeline/generate_division_diff.py"
