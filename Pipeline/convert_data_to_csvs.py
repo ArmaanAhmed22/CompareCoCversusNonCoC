@@ -29,8 +29,9 @@ while i < len(all_data):
             break
     i+=3
 
+os.makedirs(snakemake.output[0], exist_ok=True)
 for cur_title, cur_data in out_csvs:
-    if os.path.isdir(snakemake.output[0]):
-        os.mkdir(snakemake.output[0])
+    if "(System Generated)" in cur_title or "NON-ANALYTIC" in cur_title or "Blank(s)" in cur_title:
+        continue
     with open(f"{snakemake.output[0]}/{cur_title}.csv", "w") as h:
         h.write(cur_data)
