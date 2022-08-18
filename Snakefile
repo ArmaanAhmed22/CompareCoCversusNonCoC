@@ -11,7 +11,8 @@ rule compare:
         directory("Input/{file}/data")
     output:
         directory("Output/{file}/kmfs"),
-        directory("Input/{file}/kmf_univariate_models")
+        directory("Input/{file}/kmf_univariate_models"),
+        directory("Input/{file}/lifelines")
     script:
         "Pipeline/compare.py"
     
