@@ -26,8 +26,10 @@ rule generate_diff:
 
 rule division_diff:
     input:
-        directory("Input/{file}/kmf_univariate_models")
+        directory("Input/{file}/kmf_univariate_models"),
+        directory("Input/{file}/lifelines")
     output:
-        "Output/{file}/division_diff.png"
+        "Output/{file}/division_diff.png",
+        "Input/{file}/p_values_difference_end.csv"
     script:
         "Pipeline/generate_division_diff.py"

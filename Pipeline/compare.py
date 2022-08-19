@@ -129,4 +129,4 @@ for cur_cancer, flag_dict in last_survival.items():
     os.makedirs(f"{snakemake.output[2]}/{cur_cancer}", exist_ok=True)
     for cur_flag, cur_df in flag_dict.items():
         cur_df.to_csv(f"{snakemake.output[1]}/{cur_cancer}/{cur_flag}.csv", index=False)
-        pdf_dict[cur_cancer][cur_flag].to_csv(f"{snakemake.output[2]}/{cur_cancer}/{cur_flag}.csv", index=False)
+        pd_dict[cur_cancer][cur_flag][0].to_csv(f"{snakemake.output[2]}/{cur_cancer}/{cur_flag}.csv", index=False)
